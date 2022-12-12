@@ -1,21 +1,22 @@
 <template>
+  <div class="encabezado">
   <img alt="Vue logo" src="./assets/logo.png" />
-  <h1>Hola mundo</h1>
-  <button @click="algo">xmklmwd</button>
-  <ul>
-    <li v-for="(categoria, id_categoria) in Informacion" :key="id_categoria" :index="id_categoria">
+  <h1>Mostrar Menu</h1>
+  <button @click="algo">click</button>
+  </div>
+
+  <div class="inicio">
+    <div v-for="(categoria, id_categoria) in Informacion" :key="id_categoria" :index="id_categoria">
       <h1>{{categoria.nombre_categoria}}</h1>
          <div v-for="(subcategoria, id_subcategoria) in categoria.subcategorias" :key="id_subcategoria" :index="id_subcategoria">
         <h2>{{subcategoria.nombre_subcategoria}}</h2> 
           <div v-for="(articulo, id_articulo) in subcategoria.articulos" :key="id_articulo" :index="id_articulo">
-            <h4>{{articulo.nombre_articulo}}</h4> 
+            <h4 class="articulo">{{articulo.nombre_articulo}}</h4> 
          </div>
         </div>
-    </li>
-  </ul>
-
-
-
+    </div>
+ 
+  </div>
 </template>
 
 
@@ -45,13 +46,47 @@ export default {
 }
 </script>
 
-<style>
-#app {
+<style scoped>
+
+.inicio{
+  width: 4400px;
+  background-image: url('@/assets/Fondo.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  display: flex;
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0 px;
 }
+.inicio h1{
+    font-family: 'Alfa Slab One', cursive;
+  }
+.inicio h2{
+  font-family: 'Zen Dots', cursive;
+}
+.inicio h4{
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.encabezado{
+  margin: auto;
+}
+
+.encabezado img{ 
+  margin: 0 auto;
+  display: block;
+}
+
+.encabezado h1{
+  text-align: center;
+}
+.encabezado button{
+ margin: 0 auto;
+  display: block;
+}
+
+body{
+  background-color: blue;
+}
+
 </style>
