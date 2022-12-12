@@ -86,7 +86,7 @@ export default {
 }
 
 body{
-  background-color: blue;
+  background-color: white
 }
 
 </style>
